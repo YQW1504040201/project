@@ -1,0 +1,1055 @@
+
+//海康
+1.将ud_client的订阅端和发布端分开，就可以在订阅端回调函数中，调用websocket的对象了。
+
+//小车系统的ffmpeg的版本,拉取
+sudo add-apt-repository ppa:jonathonf/ffmpeg-4
+//指定端口运行流媒体镜像
+docker run -d -p 1935:1935 -p 8080:8080 -p 1985:1985 registry.cn-hangzhou.aliyuncs.com/ossrs/srs:3
+ffplay rtmp://127.0.0.1/live/yqw //格式：ffplay url(rtmp格式)
+//低延时播放
+ffplay rtsp://admin:udi123456@192.168.2.123  -fflags nobuffer
+
+//opencv官网
+http://opencv.org
+libopencv_videoio.so.4.3
+
+//build2目录
+cmake ..
+make -j8
+./undistort_stream
+
+//根目录
+ffplay /dev/video0
+ffplay rtmp://video.unity-drive.net/stream/yqw //here
+
+//build2
+./undistort_stream
+ffplay /dev/video0
+./undistort_stream -h
+./undistort_stream /dev/video0 /dev/video0 /dev/video0 /dev/video0 rtmp://video.unity-drive.net/stream/yqw //here
+
+1.日志输出
+
+海康用户名：admin
+密码：udi123456
+
+海康官网：
+用户名:skyy
+姓名：sky
+密码：yqw1504040201
+邮箱：一清邮箱
+
+csdn老师ffmpeg安装3.3.2版本win版
+opencv3.2.0版本win版
+ffplay rtsp://admin:udi123456@192.168.2.123/h264/ch1/main/av_stream
+
+抓图api 巡航点 车端一键报警触发器 黑名单
+
+CSDN学院：
+15037140207
+Unity-drive123
+
+系统默认的路径，分别是
+/usr/include
+/usr/local/include
+/usr/lib/gcc-lib/i386-linux/2.95.2/include
+
+
+
+在小车上测试：
+1.TODO
+2.aptupdate
+3.myHttp
+5.小车id
+
+Udi12345(shift)
+
+前端页面：http://47.112.135.212:8087/car/software
+测试： 软件安装成功不返回配置，成功则返回一个tips
+文件的安装和升级是同一代码实现
+1.配置文件安装卸载成功 安装卸载返回成功 #通过# 前端需要刷新页面才能显示改变
+2.软件安装成功 返回成功 #通过#
+3.软件升级成功 返回成功 #通过#
+4.软件卸载成功 返回成功  #通过#
+5.联合测试 安装软件同时安装其配置文件 返回成功 #通过#
+6.联合测试 卸载软件同时卸载其配置文件 #通过#
+7.联合测试 升级软件同时，安装其配置文件 返回成功 #通过#
+8.联合测试 软件升级，同时卸载其配置文件 返回成功  #通过# 
+//9.联合测试 安装软件，同时卸载其配置文件
+//10.升级软件，安装执行版本不成功时，回滚到原来的版本
+成功下载41个软件，列表中共50个软件，其中四个文件因为依赖性无法安装
+
+在容器中测试
+1.
+Packages were downgraded and -y was used without --allow-downgrades.
+解决方法：apt -y --force-yes install unity-drive-rambot-common-pkgs-rc=2.6.4
+--force-yes --allow-remove-essential --allow-change-held-packages三者功能相同
+报此错误需要手动安装，除去-y，手动输入Y,卸载后第二次安装-y可加可不加，不会有输入Y的提示
+2.
+Errors were encountered while processing:
+ /var/cache/apt/archives/unity-drive-rambot-lplanner_2.5.26_amd64.deb
+安装apt-utils
+3.
+debconf: unable to initialize frontend: Dialog
+(1)在dockerfile中加入
+ENV DEBIAN_FRONTEND noninteractive
+(2)apt-get install dialog(选择)
+4.dpkg: error processing archive /var/cache/apt/archives/
+
+unity-drive-rambot-common-pkgs 2.5.8(无法安装)
+unity-drive-rambot-lplanner 2.5.26(无法安装)
+相斥
+unity-drive-rambot-common-pkgs-rc 2.6.4(已安装)
+unity-drive-rambot-lplanner-rc 2.6.5.1(已安装)
+rc情况只能安装一个版本。
+5.app之间存在依赖问题，安装需要有顺序
+
+问题：若本机已安装最新版本，前端依然可以选择安装最新版本，本机无法安装成功，无法向前端返回OK，前端一直处于待安装状态。
+unity-drive-integrated-nav-gye之前需要安装
+Depends: unity-drive-can-parser but it is not going to be installed
+Depends: unity-drive-driveway-global-plan but it is not going to be installed
+Depends: unity-drive-rambot-lplanner but it is not going to be installed
+安装时屏蔽后台发来的指令
+
+unity-drive-lower-controller
+
+//待解决：一个软件是否可以存在两个版本
+//在16中为什么卸载之前版本失败  unity-drive-udrive-common-rc
+
+//1.指定版本升级时，先删除之前的版本,再安装现在的版本，没安装成功则重新安装之前的版本。
+//2.安装升级软件成功才会安装配置文件。
+//3.卸载软件时，卸载配置文件。
+//4.升级软件时，卸载之前的软件，安装软件升级软件不成功时，重新安装之前的软件。
+//5.如果配置文件没有，后台发来删除指令，也返回OK
+
+
+audacity 一个播放Qt录到的音频文件的应用
+
+1.声卡支持双通道吗
+2.声卡支持pcm吗
+ip.cn
+//id:27 请求消息的字段
+//event:接收后台下发的对app安装、更新、删除等操作指令
+//bool:true上报，false不上报
+message AppInstallCmd{
+  uint32 class_id = 1;
+  message Items{
+        uint32 count = 1;
+        message ItemsNode{
+           string id = 1;//车辆软件或配置唯一标识
+       bool is_soft = 2;//是否为软件
+       uint32 operation = 3;//1安装，2升级，3卸载
+       string conf_name = 4;//配置名称
+       string text = 5;//配置内容
+       string soft_name = 6;//软件名称
+       string identity = 7;//版本标识，指软件版本号或配置哈希值
+        };
+        repeated ItemsNode nodes = 2;
+  }
+  Items items = 2;
+}
+
+//id:27 应答消息的字段
+message AppInstallReport{
+    uint32 class_id = 1;
+  message Items{
+        uint32  count = 1;
+        message ItemsNode{
+           string id = 1;//车辆软件或配置唯一标识
+       bool is_soft = 2;//是否为软件
+       uint32 operation = 3;//安装1，升级2，卸载3
+       bool ok = 4;//是否执行成功
+       string reason = 5;//失败原因
+        };
+        repeated ItemsNode nodes = 2;
+  }
+  Items items = 2;
+}
+
+unity-drive-can-bus和unity-drive-can-bus-rc只能安装一个
+unity-drive-can-parser,unity-drive-can-parser-rc,unity-drive-curb-publisher不能安装
+
+
+开进程开销太大
+1.开线程用system()
+2.异步实现,system()
+
+
+1.获得所有待下载升级的appName
+2.异步实现
+3.更新成功
+
+
+
+
+#pragma execution_character_set("utf-8")
+1.冒泡排序->冒泡排序改进版（减少外层循环）->选择排序（标记最小值）
+
+2.插入排序(假设第一个有序,后面无序向左比交，移到有序数组中)->希尔排序(分治的插入排序，incream = incream/3 + 1，数据量少，基本有序)
+
+3.并归排序:数组中中间分开，直至数据分为一个，然后向上并归，每次并归放
+在辅助空间，然后把辅助空间赋值给总数组，以供上次递归调用。
+
+树的存储：左孩子右兄弟，将树变为二插树
+
+SQL语言
+Q_GLOBAL_STATIC
+以__cdecl的方式
+
+求二叉树，叶子节点和深度
+
+QMutexLocker locker(&mutex)
+
+C++11的三种智能指针
+
+SO_KEEPALIVE心跳机制
+
+extern int pthread_mutex_lock(pthread_mutex* _mutex)以阻塞方式申请互斥锁；
+extern int pthread_mutex_trylock(pthread_mutex* _mutex)以非阻塞方式申请互斥锁；
+
+第五个参数
+Qt::AutoConnection： 默认值，使用这个值则连接类型会在信号发送时决定。如果接收者和发送者在同一个线程，则自动使用Qt::DirectConnection类型。如果接收者和发送者不在一个线程，则自动使用Qt::QueuedConnection类型。
+
+Qt::DirectConnection：槽函数会在信号发送的时候直接被调用，槽函数运行于信号发送者所在线程。效果看上去就像是直接在信号发送位置调用了槽函数。这个在多线程环境下比较危险，可能会造成奔溃。
+
+Qt::QueuedConnection：槽函数在控制回到接收者所在线程的事件循环时被调用，槽函数运行于信号接收者所在线程。发送信号之后，槽函数不会立刻被调用，等到接收者的当前函数执行完，进入事件循环之后，槽函数才会被调用。多线程环境下一般用这个。
+
+Qt::BlockingQueuedConnection：槽函数的调用时机与Qt::QueuedConnection一致，不过发送完信号后发送者所在线程会阻塞，直到槽函数运行完。接收者和发送者绝对不能在一个线程，否则程序会死锁。在多线程间需要同步的场合可能需要这个。
+
+Qt::UniqueConnection：这个flag可以通过按位或（|）与以上四个结合在一起使用。当这个flag设置时，当某个信号和槽已经连接时，再进行重复的连接就会失败。也就是避免了重复连接。
+
+
+指向普通类型的指针，是不可以将指向const修饰类型的指针赋给它。
+以vs2017为例，windows栈大小默认为1M
+一个进程，操作系统会分派2M大小的栈，分配4G大小的堆。
+栈溢出指的是栈的使用超出了栈的大小，一个原因有两个：
+
+
+1、 局部数组变量空间太大
+
+  解决这类问题的办法有两个，
+
+      一是增大栈空间,二是改用动态分配，使用堆（heap）而不是栈（stack）。 
+
+2、 函数出现无限递归调用，函数调用的时候会将一些运行相关的信息压栈，这个也就好理解了。
+解决办法，在函数return 的时候调用递归。
+
+
+七大进程间通信方式：
+1.无名管道(Pipe)
+2.有名管道(Fifo)
+3.信号(Signal)
+4.共享内存(share memory）
+5.消息队列(message queue)
+6.信号量(semaphore)
+7.鲫鱼套接字(Socket)的进程间通信 
+
+
+
+1.无名管道
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int amin()
+{
+	int pfd[2];
+	int pid;
+	if(pipe(pfd) < 0)
+	{
+	//failed
+	perror("create pipe failed");
+	reurn -1;
+	}
+	else
+	{
+	if(pid = fork() < 0)
+	{
+	  perror("create process failed");
+	}
+	else if(pid > 0)
+	{
+	//parent process
+	}
+	else
+	{
+	//child process 
+	}
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+shutdown -h now(正常关机，支持定时关机） halt（关闭内存，后自动关机）
+bin:全称binary，含义是二进制，该目录中存储的都是二进制文件，文件是可以被运行的。
+dev: 该目录中放的是外界设备，例如U盘，光盘。在其中的外接设备不能直接使用，需要挂载（分配盘符）。
+etc: 该目录主要存储一些配置文件，比如数据库。
+home: 表示家，表示的是除了root用户以外其他用户的家目录，类似win的User目录。
+proc: process,表示进程，该目录存储的是Linux运行时候的进程，打开会卡屏，东西太多，无法删除。
+root: 超级管理员的home目录。
+sbin: super binary, 该目录也是存放一些可以被执行的二进制文件，但是必须有超级管路员才能运行的二进制文件，比如shoutdown，halt。
+tmp: 表示临时的，当系统运行时候产生的临时文件会在这个目录存着，当系统用完时会自己删掉，自己不要删。win里也有这个文件，在C盘/WINDOWS/Temp。
+usr： 存放的是用户自己安装的软件，类似于win下的program files。
+var： 存放的程序，系统的日志文件目录。
+mnt: 当外界设备需要挂载的时候，就需要挂在mnu目录下。
+
+指令：指令主题[选项*n][对象*n]
+ls:含义，list，列出一些东西,列出当前位置所有文件和文件夹的名称 ls/ls+路径 
+相对路径：参照物，当前的工作路径
+绝对路径：从根（/）开始寻找路径 /表示从根目录下开始寻找，绝对路径格式：/+路径
+相对路径的写法：在相对路径中，通常会用到./，../ ./表示当前目录下，可省略一般不写
+../上一级目录下如ls../../root
+用法3：#ls 选项 路径 如：
+#ls -l 路径    表示已详细列表的形式进行显示（包扩权限） -表示文件，d表示文件夹
+#ls -la 路径   表示显示所有的文件/文件夹(包含隐藏文件/文件夹）
+隐藏文件都是以.开头
+用法4：#ls -lh 路径 含义：列出指定路径下的所有文件/文件夹的名称，含文件大小(目录固定显示4K，4K表示刚刚创建出来时占4k,但不代表真实大小）
+
+2. pwd: print working directory,打印当前工作路径
+
+3. cd: change directory,切换路径
+(补充：#cd ~ 切换到当前用户的家目录)
+
+4. mkdir: make directory,创建文件夹 
+语法1：#mkdir 路径(包含新建文件夹名称的路径)
+注意：ls列出的list,蓝色表示文件夹，黑色表示文件，绿色表示其权限为拥有所有权限(可读可写可执行)
+语法2：#mkdir -p 路径(一次创建多层新路径）
+语法3：#mkdir 路径1 路径2 路径3 ... （一次创建多个路径）
+5.touch 路径 创建一个新文件
+语法2：touch 路径1 路径2 路径3 .. （一次创建多个文件）
+
+6.cp: copy (复制文档) （文档包括文件夹和文件）
+语法1（复制文件）：cp 路径1 被复制到的路径2   （第二个路径也要加上文件名，因为这里可以改名）
+语法2（复制文件夹）：cp -r 路径1 被复制到的路径2 （第二个同样加上文档名，-r是递归复制的意思
+因为这个文件夹下含多个文件，$多重文件，需要全部复制过去)
+
+7.mv: move (移动,剪切文档）
+语法1：#mv 需要移动的文档路径 文件被移动到的文档路径（包含重命名（可选)）
+补充：重命名就是原地移动实现的
+
+8.rm remove (删除文档)
+语法1（删除文件）：#rm 选项 需要移除的文件路径
+选项： -f force(强制，避免删除前系统提示是否确认删除)
+（如果不加-f，回复提示四种：y/yes n/no 不分大小写）
+       -r 递归
+语法2（删除文件夹）：#mv -rf 需要删除的文件夹路径 (r递归删除文件夹中所有内容，
+f在每次删除前避免删除确认提示)
+语法3（删除文档）：#mv -rf 需要删除的文件夹路径 需要删除的文档路径 ...
+语法4（删除名字相近的文档）：#rm -rf 路径/nam* (会删除在“路径”下的文档名字以nam
+开头的文档）
+（补充*称为通配符，代表任意字符）
+
+9.vim （vim是一款编辑器，类似window的notepad，被称为编辑器之神）
+语法：#vim 文件的路径 (打开一个文件，可以存在，可以不存在)
+补充：打开后可用指令退出编辑：shift + : + q + enter  (按其他键可能引发异常）
+
+10.输出重定向
+一般命令的输出都会显示在终端中，有些时候需要将一些命令的执行结果保存到指定的
+文件中进行后续的处理，则这时候需要用到输出重定向技术。
+>: 覆盖输出，会覆盖掉原有的文件内容
+>>:追加输出，会在文件原始内容末尾继续添加
+语法：#正常执行的指令 >/>> 文件的路径
+注意：文件可以不存在，不存在则新建
+
+11.cat指令
+作用1：直接打开一个文件，不会进入编辑器（因此不需要像vim那样退出），文件内容
+会显示在终端，当像查看一个文件内容而又不需要编辑时用此命令。
+语法：#cat 文件路径
+作用2：cat还可以对文件进行合并
+语法：#cat 待合并的文件路径1 文件路径2 ... 文件路径n >/>> 合并之后的文件路径
+（后面用输出重定向将合并后的文件保存在另一个文件下）   
+
+
+进阶指令：
+
+1.#df -h
+作用：查看磁盘的空间
+语法： #df -h       -h(表示以可读性较高的形式展示大小）
+
+
+
+
+第一天：gcc程序编译
+gcc [options][filenames]
+options可以不写
+filenames即是要编译的文件
+例子：gcc hello.c -o hello
+会生成hello的可执行文件
+
+1.-o 
+确定可执行文件的名称，如果不给出这个选项，gcc就会
+给出预设的名字，a.out可执行文件
+
+2.-c
+只编译，不连接成为可执行文件，编译器只是有输入的.c等源代码
+生成.o为后缀的目标文件。 
+
+3.-O  （-O2 比-O更好的优化）
+对程序进行优化编译，链接，这样产生的可执行文件执行效率可以
+提高，相应的编译，链接的速度要慢一些
+语法：gcc -O filename.c -o Exe
+
+4.-Idirname
+<>是在，预处理时会在系统预设的头文件目录（一般/usr/include)
+中找头文件，include “”,会在当前目录中寻找头文件，这个选项
+的作用是添加一条寻找的路径。当上述两种路径找不到时，会在这条
+路径去找。
+
+5.-Ldirname
+在进行链接时，gcc一般去/usr/lib找库，这条选项告诉gcc默认路径找不到时，
+去这条路径去找。
+
+6.-lfilename
+在链接时，寻找名字为libfilename.a的库函数,该函数库位于系统预设的目录
+(/usr/lib),或者-L添加的路径。例如，-lm表示连接名为libm.a的数学函数
+库。包含了头文件为filename.h后，在默认情况下，会去找filenamelib的库。
+例子：gcc foo.c -L /home/lib -lfoo -o foo
+
+7.-static
+静态链接库文件
+例子：gcc -static hello.c -o hello
+库有动态链接和动态链接，动态链接是指用到库函数时去库里调用，静态链接
+指把库函数和源码放在一起形成一个整体编译成可执行文件。gcc默认情况下用
+的是动态编译，静态编译需要制定。 
+
+8.-Wall    （-w不显示warning信息)
+终端显示warning信息
+
+9.-DMACRO
+定义MACRO宏，等效于在程序中使用#define MACRO
+
+
+第一天：gdb程序调试
+1.编译生成可执行文件：
+gcc -g filename.c -o outfilename
+
+2.启动GDB
+gdb outfilename
+
+3.在main函数处设置断点
+break main(或b main)
+
+4.运行程序
+run
+
+5.单步运行
+next
+
+6.继续运行
+continue（或c)
+
+GDB命令
+1.list(l):查看程序
+2.0break(b) 函数名 在某函数入口添加断点
+3.break(b)行号 在指定行添加断点
+4.break(b)文件名：行号 在指定文件的指定行
+添加断点
+5.break(b)行号 if 条件 当条件为真时u，指定行号处断点生效
+例子：b 5 if i=10
+(或 b if i=10 5)
+在第5行设置断点
+6.next(n)单步运行
+7.stap(s)单步运行
+next在执行单步时，如果单步中含一个函数调用，则不会去这个
+函数的实现代码去执行，如 int a = func();
+stap会到这个函数中去执行单步操作。
+8.finish运行程序，直到当前函数结束
+9.watch变量名
+10.quit(q)退出gdb
+11.continue（c)
+继续往下运行程序，如果没遇到断点不会停下来，直到程序结束。
+
+第一天makeFile工程管理
+规则：用于说明如何生成一个或多个目标文件
+规则如下：
+targets:prerequisites
+	command
+目标：依赖
+	命令
+main.o:main.c
+	gcc -c main.c
+命令需要以tab键开始
+
+make命令默认在当前目录下寻找名字为makefile或者Makefile的工程文件，
+当名字不为两者之一时，可以使用如下方法指定make要编译的文件：
+make -f 文件名
+
+Makefile中把那些没有任何依赖只有命令的目标成为“伪目标”（phony targets）
+.PHONY:clean
+clean:
+	rm -f hello main.o func1.o func2.o
+.PHONY:clean用来指定这是个伪目标
+rm这行指令将生成的.o文件删掉
+
+变量：
+hello:main.o func1.o func2.o func3.o
+	gcc main.o func1.o func2.o func3.o -0 hello
+用变量的形式（这个变量不需要定义类型）：
+obj=main.o func1.o func2.o func3.o
+hello:$(obj)
+	gcc $(obj) -o hello
+
+在makefile中，存在系统默认的变量
+$^:代表所有的依赖文件
+$@:代表目标
+$<:代表第一个依赖的文件
+改写上面的规则如下：
+hello:main.o func1.o func2.o func3.o
+	gcc $^ -o $@
+mainfile中#字后的一行内容被视作注释
+
+hello:hello.c
+	@gcc hello.c -o hello
+其中@的作用：取消回显
+如linux内核在编译时，会显示很多回显
+信息，@可以设置不显示。但是编译的错误
+信息依然会显示出来。
+
+第二天系统调用方式访问文件
+int creat(const char* filename, mode_t mode)
+filename:要创建的文件名（可包含路径，缺省为当前路径）
+mode:创建模式（可读可写可执行）
+其默认宏定义：
+S_IRUSR（1） 可读
+S_IWUSR（2） 可写
+S_IXUSR（4） 可执行
+S_IRWXU（7） 可读可写可执行
+
+当用数字表示时可任意组合 
+如3 可执行可写
+6可写可读
+0表示没有任何权限
+
+int main(int argc, char* argv[])
+{
+return 0;
+}
+编译这个文件后若可执行程序名为 myExe
+./myExe myfile
+则argc被赋值为1
+argv指向的字符串为"myfile"
+
+打开文件函数：
+int open(const char* pathname, int flags)
+int open(const char* pathname, int flags, mode_t mode)
+pathname:要打开的文件名（可包含路径，缺省为当前路径）
+flags: 打开标志
+有下列标志：
+O_RDONLY 只读方式打开
+O_WRONLY 只读方式打开
+O_RDWR 读写方式打开
+O_APPEND 读写方式打开
+O_NOBLOCK 非阻塞方式打开
+O_CREAT 创建一个文件
+没有O_CREAT时使用两个参数的open(),当用O_CREAT时，需要用三个参数的open()
+mode 指创建时给文件设置的访问权限
+open（）函数的返回值是这个文件的描述符
+
+关闭文件函数：
+int close（int fd)
+fd即是打开时得到的文件描述符
+
+读文件函数：
+int read（int fd, const void* buf, size_t length)
+从文件描述符fd所指定的文件中读length个字节到buf所指定的缓冲区，
+返回值为实际读取的字节数。
+注意：考虑一种情况，length读取的为10个字节，文件中只有5个字节
+依然可读取成功，这时返回值就有其存在的意义。
+
+int write(int fd, const void* buf, size_t length)
+把length个字节从buf指向的缓冲区中写到文件描述符fd所指向的文件中，
+返回值为实际写入的字节数。
+
+文件指针定位函数：
+int iseek(int fd, offset_t offset, int whence)
+当打开文件时，会有一个指针指向文件中字节的首地址，读或写一些
+字节都会使得此指针向后移动相应的字节数，此函数即是不读写时单纯
+的操作指针的位置。
+将文件指针相对whence移动offset个字节。操作成功时，返回值文件指针
+相对于头文件的位置。
+SEEK_SET:相对于文件开头
+SEEK_CUR:相对于指针当前的位置
+SEEK_END:相对于文件末尾
+offset可取负值，表示向前移动，正值，向后移动。
+如何获取文件的长度：打开文件后Iseek(fd, 0, SEEK_END)返回值即是文件长度
+
+判断文件属性的函数：
+int access(const char* pathname, int mode)
+pathname:文件名称
+mode:要判断的访问权限，可以是下列值即他们的组合，R_OK：可读
+W_OK：可写 X_OK:可执行，F_OK文件存在
+返回值：当测试成功时，返回为0，如果有一个条件不符合时，返回-1
+
+
+第二天：库函数访问文件
+在系统访问文件机制里，文件描述符为整数，
+在c库中，文件表述符为一个指针，指向文件
+FILE* fopen(const char* filename, const char* mode)
+filename:打开的文件名（可包含路径，缺省为当前路径）
+
+mode：打开模式
+常见打开模式：
+r,rb 只读方式打开（在windows中，有文本文件和
+二进制文件之分，b代表打开二进制文件，linux只有
+文本，所有r,rb都可以）
+w,wb 只写方式打开，如果文件不存在，则创建
+a,ab 追加方式打开，如果文件不存在，则创建
+r+, r+b, rb+ 读写方式打开
+w+,w+b,wh+ 读写方式打开，如果文件不存在，则创建
+a+, a+b,ab+ 读和追加方式打开 如果文件不存在，则创建
+
+读文件函数
+size_t fread(void* ptr, size_t size, size_t n, FILE* stream)
+从stream指向的文件中读取n个字段，每个字段为size字节，并将读取
+的数据放入ptr所指的字符数组中，返回值为实际读取的字节
+
+写文件函数：
+size_t fwrite(const void* ptr, size_t size, size_t n, FILE* stream)
+从缓冲区ptr所指的数组中把n个字段写到stream指向的文件中，每个字段
+长为size个字节，返回值为实际写入的字段数
+
+读字符函数
+int fgetc(FILE* stream)
+从指定的文件中读取一个字符
+EOF最后被读出的文件结束符
+
+写字符函数：
+int fputc(int c, FILE* stream)
+向指定的文件中写入一个字符
+
+格式化读
+int i;
+fscanf(FILE* stream, "%d", &i)
+其中的类型可以为任何内置类型
+
+int fprintf(FILE* stream, char* format{,argument,...})
+格式化输出一个流中
+将格式化的数据写入到stream指向的文件中
+fprintf(stream, "%s%c", s, c)
+
+int fseek(FILE* stream, long offset, int whence)
+whence:
+SEEK_SET 指针指向文件的开始处
+SEEK_CUR 指针指向当前位置
+SEEK_END 文件结束位置
+
+获取路径函数：
+在编写程序时，有时需要得到当前路径。c库函数提供了
+getcwd来解决。
+char* getcwd(char* buffer, size_t size)
+我们提供一个size大小的buffer,getcew会把当前的
+路径名copy到buffer中，如果buffer太小，函数会
+返回-1.
+例子：
+char buf[80]
+getcwd(buf, sizeof(buf));
+
+#include <sys/stat.h>
+int mkdir(char* dir, int mode)
+功能：创建一个新目录
+dir是这个路径字符
+mode是属性
+
+第二天时间编程
+#include <time.h>
+    time_t time(time_t* tloc)
+功能：获取日历时间，即从1970年1月1日0点到现在所
+经历的秒数,返回值为日历时间
+
+拿到时间日历时间怎么用
+时间转化：
+struct tm* gmtime(const time_t* timep)
+将日历时间转化为格林威治时间，并保存至TM结构体中。
+
+struct tm* localtime(const time_t* timep)
+功能：将日历时间转化为本地时间（如北京时间），并
+保存至TM结构体中。
+
+char* asctime(const struct tm* tm)
+功能：将tm格式的时间转化为字符串，如
+Sat Jul 30 08:43:03 2020
+
+char* ctime(const time_t* timep)
+功能：将日历时间转化为本地时间的字符串形式
+
+获取时间函数：
+int gettimeofday(struct timeval* tv, struct timezone* tz)
+功能：获取从今日凌晨到现在的时间差，常用于计算事件耗时。
+会把这个时间差保存在timeval这个结构体里，第二个参数可设置
+为NULL
+struct timeval
+{
+int tv_sec;//秒数
+int tv_usec;//微妙数
+};
+
+延迟执行（即阻塞）：
+unsigned int sleep(unsigned int seconds)
+功能：使程序睡眠seconds秒
+
+void usleep(unsigned long usec)
+功能：使程序睡眠usec微妙
+
+
+
+第六天多线程:多线程程序设计
+主线程创建一个子线程后,子线程并不会立马执行,
+当主线程阻塞时,子进程才会被执行.
+创建进程的函数:
+#include <pthread.h>
+int pthread_create(pthread_t* tidp, const pthread_attr_t* attr, void* (*start_rtn)(void), void* arg)
+第四个参数为传入线程的函数所需要的参数
+因为pthread的库不是linux系统的库,所以进行编译时要加上-lpthread
+gcc编译时默认从c标准库找库,非c库的要手动添加
+
+例子:
+//这个类型是个整数
+pthread_t id_1;
+void* myThread_1(void)
+{
+}
+//创建线程
+//第一个参数为指向线程标识符的指针。
+//第二个参数用来设置线程属性。
+//第三个参数是线程运行函数的起始地址。
+//最后一个参数是运行函数的参数
+ret = pthread_create(&id1, NULL, (void*)myThread_1, NULL)
+
+终止线程:
+(1)线程从启动例程中返回.(return)
+(2)主线程return退出,其所有子线程也会终止
+(3)线程自己调用pthread_exit()函数:
+#include <pthread.h>
+void pthread_exit(void* vval_ptr)
+功能:终止线程
+rval_ptr:线程退出返回值的指针
+
+线程等待:
+int pthread_join(pthread_t tid, void** rval_ptr)
+功能:运行到这个函数时,主线程会被阻塞,直到tid线程
+执行完毕.
+Tid:等待推出的线程id
+rval_ptr:线程退出的返回值的指针(一般为NULL)
+
+返回线程ID函数:
+pthread_t pthread_self(void)
+返回值为当前线程的id
+
+访问空指针会报段错误
+
+
+
+
+
+自有服务
+即不需要用户独立安装软件，而是当系统安装好后就可以直接使用的服务（内置）
+一、运行模式
+也称之为运行级别
+在linux中存在一个进程：init(initialize),进程id是1，它是计算机启动后运行
+的第一个进程
+查看进程：#ps -ef|grep init
+该进程存在一个对应的配置文件：inittab（称之为系统运行级别配置文件，位置/etc/inittab)
+
+centeros的其中运行级别
+0--halt表示关机级别(不要讲默认运行级别设为这个值）
+1--单用户模式
+2--多用户模式，不带NFS(Network File System),即不带网络
+3--多用户模式，完全的多用户模式（不带桌面，纯命令行模式）
+4--没有被使用的模式（保留待开发项）
+5--X11,完整的图形化界面模式（即平常的开机模式）
+6--reboot，表示重启级别（不要讲默认运行级别设为这个值）
+在inittab配置文件中默认设置运行级别为5
+
+与之相关的命令
+#init 0 关机
+#init 3 
+#init 6 重启电脑
+init指令需要超级管理员权限
+这些命令其实都是调用的init进程，将数字(运行级别）传递给进程，进程
+将这些数字拿到配置文件去匹配，然后执行对应的操作。
+
+http解析是指将域名绑定到一个服务器地址的操作，DNS Server（domain name server)就是做这个
+工作的
+
+shell是一个用c语言编写的程序，它是用户与Linux内核沟通的桥梁。Shell既是一种命令语言，又是一
+种程序设计语言。
+
+什么是脚本？
+脚本简单地说是一条条的文字命令，这些文字命令式可以看到的（如可以用记事本打开查看，编辑，
+有的打开乱码是因为脚本需要编译一下）
+常见脚本：JaveScript（JS,前端脚本，浏览器解释的)(当下每个几乎网页都含有）VBScript（微软倡导的很少用），ASP(几乎
+不用了，与后面两个称为著名的3p）,JSP,PHP（这两个是后端脚本用的最多的，由服务器去解释的）SQL(数据库操作语言）
+Perl（有点像Python) Shell Python(支持命令行，支持网站的脚本）Ruby(日本人开发的） JavaFX Lua(做游戏用的多）
+
+为什么学习shell脚本？
+Perl和Shell是linux内置脚本，shell比较强大
+程序开发的效率高，依赖功能强大的命令可以迅速完成开发任务（批处理）
+
+linux中默认的shell是/bin/bash，因为linux有很多分支，所以shell也有很多种
+流行的shell有ash, bash, ksh, csh, zsh等。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//装ros时设置的环境变量
+source /opt/ros/noetic/setup.bash
+ 
+ #装ros时设置的环境变量
+source /opt/ros/noetic/setup.bash
+#编译完代码之后设置的环境变量
+source /home/yqw/catkin_ws/devel/setup.bash
+source /home/yqw/catkin_ws_1/devel/setup.bash
+
+sudo apt install catkin
+ //创建工作空间
+ $ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+//编译工作空间
+$ cd ~/catkin_ws/
+$ catkin_make
+//设置环境变量
+$ source devel/setup.bash
+//检查环境变量
+$ echo $ROS_PACKAGE_PATH
+//创建功能包
+$ cd ~/catkin_ws/src
+$ catkin_create_pkg test_pkg std_msgs rospy roscpp
+//编译功能包
+$ cd ~/catkin_ws
+$ catkin_make
+$ source ~/catkin_ws/devel/setup.bash
+
+
+//话题通信方式
+//编译话题通信节点之前需要在CMakeLists.txt中
+• 设置需要编译的代码和生成的可执行文件.
+• 设置链接库;
+
+//自定义消息结构体案例：
+//发布者不断发送乌龟定位信息，接受者不断接受显示定位信息
+//自定义一个消息结构体，需要
+➢ 在CMakeLists.txt添加编译选项
+• find_package( ...... message_generation)
+• add_message_files(FILES Person.msg)
+  generate_messages(DEPENDENCIES std_msgs)
+• catkin_package(...... message_runtime)
+
+➢ 在package.xml中添加功能包依赖
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+
+
+//编译的的话题通信节点中有自定义的消息结构需要在CMakeLists.txt中
+• 设置需要编译的代码和生成的可执行文件
+• 设置链接库;
+• 添加依赖项；
+（需要在.cpp文件中添加自定义消息结构体的节点）
+
+
+//编译完代码之后设置的环境变量
+source /home/yqw/catkin_ws/devel/setup.bash
+
+
+
+//编译好功能包中的节点后，运行此功能包中编译好的节点
+rosrun learning_topic velocity_publisher
+//新建文本编辑器，给名字和格式可以是文本，cpp
+nano file.txt
+
+//小乌龟的三个操作
+roscore
+//小乌龟这个节点既支持话题通信，又支持服务通信
+rosrun turtlesim turtlesim_node
+rosrun turtlesim turtle_teleop_key
+//编译好功能包中的节点，运行此功能包中编译好的节点
+rosrun learning_topic velocity_publisher
+//新建文本编辑器，给名字和格式可以是文本，cpp
+nano file.txt
+
+
+//在一个文件里打开终端直接创建msg文件
+touch Person.msg
+
+//话题发布
+（1）初始化节点
+（2）注册节点
+（3）（组消息包）发布话题
+
+//话题订阅
+（0）定义回调函数
+（1）初始化节点
+（2）注册节点
+（3）订阅话题
+
+
+
+
+//服务通信模式
+
+//在src中创建功能包
+//要用到的消息结构体是turtlesim功能包中的，所以添加进来
+$ cd ~/catkin_ws/src
+$ catkin_create_pkg learning_service roscpp rospy std_msgs geometry_msgs
+turtlesim
+
+//创建一个客户端
+//此客户端请求产生一个新的小海龟，并初始化它的位置
+（1）初始化ros节点
+（2）检测到要检测的服务名后，创建一个client实例
+（3）发布服务请求数据
+（4）等待server处理后的应答结果
+
+//如何配置CMakeLists.txt中的编译规则
+• 设置需要编译的代码和生成的可执行文件;
+• 设置链接库;
+add_executable(turtle_spawn src/turtle_spawn.cpp)
+target_link_libraries(turtle_spawn ${catkin_LIBRARIES})
+
+//编译，在工作空间根目录执行
+catkin_make
+//运行功能包
+//第三个参数是节点编译出来的可执行文件
+rosrun learning_service turtle_spawn
+
+//创建一个服务器
+//该程序是server，当有名ID为turtle_command的请求时(服务），则调用回调函数
+//对请求进行返回，并发布话题，指导小乌龟进行线性和角度的运动
+（1）初始化ros节点
+（2）创建server实例，并注册
+（3）循环等待服务请求，进入回调函数
+（4）在回调函数中完成服务功能的处理，并反馈数据。
+（5）发布话题指导小乌龟运行
+//运行编译好的功能包
+rosrun learning_service turtle_command_server
+
+//向server发生一个请求命令
+rosservice call /turtle_command "{}"
+
+//服务通信，自定义结构体
+//在功能包内，src同级定义文件夹，在文件夹内
+touch Person.srv
+
+//自定义一个.srv消息结构体需要配置
+➢ 在package.xml中添加功能包依赖
+<build_depend>message_generation</build_depend>
+<exec_depend>message_runtime</exec_depend>
+
+➢ 在CMakeLists.txt添加编译选项
+• find_package( ...... message_generation)
+• add_service_files(FILES Person.srv)
+generate_messages(DEPENDENCIES std_msgs)
+
+• catkin_package(...... message_runtime)
+//编译会生成三个文件，两外两个是第一个的分开，用的时候包含第一个就行
+
+//编译含有自定义结构体的client和server之前配置CMakeLists.txt
+• 设置需要编译的代码和生成的可执行文件;
+• 设置链接库;
+• 添加依赖项；
+add_executable(person_server src/person_server.cpp)
+target_link_libraries(person_server ${catn_LIBRARIES})
+add_dependencies(person_server ${PROJECT_NAME}_genckipp)
+add_executable(person_client src/person_client.cpp)
+target_link_libraries(person_client ${catkin_LIBRARIES})
+add_dependencies(person_client ${PROJECT_NAME}_gencpp)
+
+
+
+//参数的使用与编程方法
+//创建参数功能包 第三个参数及以后是依赖包
+catkin_create_pkg learning_parameter roscpp rospy std_srvs
+
+//发一个服务命令
+rosservice call /clear "{}"
+
+//rosparam基本命令
+//列出当前所有参数
+rosparam list
+//显示某个参数值
+rosparam get param_key
+//设置某个参数的值
+rosparam set param_key param_value
+//保存当前所有的全局参数到一个新建的文件(在hoem下)
+rosparam dump file_name
+//从文件读取参数
+rosparam load file_name
+//删除参数
+rosparam delete param_key
+
+//在编译功能包之前做的
+//要编译的文件，和编译后生成的文件
+//设置链接库
+add_executable(parameter_config src/parameter_config.cpp)
+target_link_libraries(parameter_config ${catkin_LIBRARIES})
+
+Apollo平台对ROS的改进,分为三方面:
+1.通信性能优化,通过共享内存机制.
+2.去中心话网络拓扑
+3.数据兼容性扩展
+
+
+1.ros传输数据是一帧一帧传输,前一帧传完,才会传下一帧,若某一帧,传的太久
+就会丢弃这帧.
+ros系统把一个传输,到接受方拿到,需要copy四次数据,百度apollo改造后,基于
+共享内存,只需要copy两次.
+原声的ros系统,基于socket通信方式,传5M需要4ms,百度apollo改造后的基于
+共享内存机制的传输方式需要2ms.整机每秒达5.5G.
+
+2.节点之间建立通信过程分为五部:
+1)发布节点向master注册.
+2)接收节点向master注册.
+3)master向接收节点发送已经发送节点的拓扑信息.
+4)接收节点向发送节点请求tcp链接.
+5)二者建立了p2p的链接后,进行通信.
+
+
+
+
+
+
+
+
+
+
+
+docsgen:规范代码注释的一个软件
+
